@@ -8,6 +8,7 @@ from requests.models import Response
 from helpers.DatabaseHelper import Database, DatabaseEntry
 from helpers.Exceptions import InternalError, MonicaFetchError
 
+TIMEOUT = 20
 
 class Monica:
     """Handles all Monica related (api) stuff."""
@@ -88,7 +89,7 @@ class Monica:
             while True:
                 # Get genders
                 response = requests.get(
-                    self.base_url + "/genders", headers=self.header, params=self.parameters, timeout=5
+                    self.base_url + "/genders", headers=self.header, params=self.parameters, timeout=TIMEOUT
                 )
                 self.api_requests += 1
 
@@ -127,7 +128,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -165,7 +166,7 @@ class Monica:
                 self.base_url + f"/contacts/{monica_id}",
                 headers=self.header,
                 params=self.parameters,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -191,7 +192,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -227,7 +228,7 @@ class Monica:
                     self.base_url + f"/contacts?page={page}",
                     headers=self.header,
                     params=self.parameters,
-                    timeout=5,
+                    timeout=TIMEOUT,
                 )
                 self.api_requests += 1
                 # If successful
@@ -275,7 +276,7 @@ class Monica:
                     self.base_url + f"/contacts/{monica_id}",
                     headers=self.header,
                     params=self.parameters,
-                    timeout=5,
+                    timeout=TIMEOUT,
                 )
                 self.api_requests += 1
 
@@ -314,7 +315,7 @@ class Monica:
                 self.base_url + f"/contacts/{monica_id}/notes",
                 headers=self.header,
                 params=self.parameters,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -340,7 +341,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -369,7 +370,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -395,7 +396,7 @@ class Monica:
                 self.base_url + f"/notes/{note_id}",
                 headers=self.header,
                 params=self.parameters,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -420,7 +421,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -449,7 +450,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -479,7 +480,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -507,7 +508,7 @@ class Monica:
                 self.base_url + f"/addresses/{address_id}",
                 headers=self.header,
                 params=self.parameters,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -536,7 +537,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -565,7 +566,7 @@ class Monica:
                 self.base_url + f"/contacts/{monica_id}/contactfields",
                 headers=self.header,
                 params=self.parameters,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -605,7 +606,7 @@ class Monica:
                 self.base_url + "/contactfieldtypes",
                 headers=self.header,
                 params=self.parameters,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -635,7 +636,7 @@ class Monica:
                 headers=self.header,
                 params=self.parameters,
                 json=data,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
@@ -668,7 +669,7 @@ class Monica:
                 self.base_url + f"/contactfields/{field_id}",
                 headers=self.header,
                 params=self.parameters,
-                timeout=5,
+                timeout=TIMEOUT,
             )
             self.api_requests += 1
 
